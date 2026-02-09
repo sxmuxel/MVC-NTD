@@ -43,7 +43,7 @@ En la terminal:
 pip install -r requirements.txt
 ```
 
-###Paso 4: Ejecutar app.py
+### Paso 4: Ejecutar app.py
 
 En la terminal:
 ```bash
