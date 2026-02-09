@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Nueva Categoría{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Crear Nueva Categoría</h2>
+
+<div class="card">
+    <div class="card-body">
+        <form method="POST" action="{{ url_for('crear_categoria') }}">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre de la Categoría *</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required maxlength="100"
+                    placeholder="Ejemplo: ChatGPT en las Escuelas">
+            </div>
+
+            <div class="mb-3">
+                <label for="tipo_enfoque" class="form-label">Tipo de Enfoque</label>
+                <select class="form-select" id="tipo_enfoque" name="tipo_enfoque" required>
+                    <option value="">Selecciona un enfoque</option>
+                    <option value="Augmentation">Augmentation</option>
+                    <option value="Automation">Automation</option>
+                    <option value="Hybrid">Hybrid</option>
+                </select>
+            </div>
+
+
+            <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripción</label>
+                <textarea class="form-control" id="descripcion" name="descripcion" rows="3"
+                    placeholder="Describe brevemente esta aplicación..."></textarea>
+            </div>
+
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-save"></i> Guardar Categoría
+                </button>
+                <a href="{{ url_for('listar_categorias') }}" class="btn btn-secondary">
+                    <i class="bi bi-x-circle"></i> Cancelar
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

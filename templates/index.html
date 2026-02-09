@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio - Sistema NTD{% endblock %}
+
+{% block content %}
+<div class="text-center mb-5">
+    <h1 class="display-4">Sistema MVC Interactivo </h1>
+    <p class="lead text-primary">Nuevas Tecnologias de Desarrollo | Taller 1 + BD</p>
+</div>
+
+<!-- Información del tema -->
+<div class="card mb-5">
+    <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">Información del proyecto</h5>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <div class="p-3 bg-light rounded">
+                    <h5>Base de Datos Empleada</h5>
+                    <span class="badge fs-5 p-2" style="background-color:#FF8200; color:white;">Scopus</span>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="p-3 bg-light rounded">
+                    <h5>Tema Principal</h5>
+                    <h6 class="text-success">Inteligencia Artificial en la Ingeniería de Sistemas</h6>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="p-3 bg-light rounded">
+                    <h5> Palabras Clave (Keywords)</h5>
+                    <div>
+                        <span class="badge bg-secondary">artificial intelligence</span>
+                        <span class="badge bg-secondary">systems engineering</span>
+                        <span class="badge bg-secondary">machine learning</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h6>📃 Descripción:</h6>
+                <p>La inteligencia artificial en la ingeniería de sistemas trata sobre el uso de programas y sistemas
+                    inteligentes que pueden aprender, analizar información y ayudar a tomar decisiones. En esta área, la
+                    IA se usa para mejorar el desarrollo de software, analizar grandes cantidades de datos, automatizar
+                    procesos, crear aplicaciones más eficientes y apoyar la solución de problemas complejos. Hoy en día,
+                    muchas herramientas que usamos a diario están basadas en inteligencia artificial, y los ingenieros
+                    de sistemas juegan un papel importante en su diseño, implementación y mejora. </p>
+            </div>
+            <div class="col-md-6">
+                <h6>🚀 Motivación:</h6>
+                <p>Elegimos este tema porque estudiamos ingeniería de sistemas y es el área que más nos gusta y que
+                    tiene más potencial a futuro y la inteligencia artificial es una herramienta muy útil en la
+                    actualidad, ya que ayuda a las personas a resolver diferentes necesidades, ahorrar tiempo y
+                    facilitar muchas tareas. Además, es un tema que está en constante crecimiento y que tiene muchas
+                    aplicaciones reales, lo que lo hace interesante para nuestra búsqueda e investigar más a fondo en
+                    que se podría usar. </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tarjetas -->
+<div class="row mb-5">
+    <div class="col-md-4 mb-4">
+        <div class="card text-white bg-info h-100 text-center">
+            <div class="card-body">
+                <h2 class="card-title">{{ total_busquedas }}</h2>
+                <p class="card-text">Búsquedas Realizadas</p>
+                <a href="{{ url_for('mostrar_busquedas') }}" class="btn btn-light">Ver Búsquedas</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card text-white bg-success h-100 text-center">
+            <div class="card-body">
+                <h2 class="card-title">{{ total_articulos }}</h2>
+                <p class="card-text">Artículos Científicos</p>
+                <a href="{{ url_for('mostrar_articulos') }}" class="btn btn-light">Ver Artículos</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card text-white bg-warning h-100 text-center">
+            <div class="card-body">
+                <h2 class="card-title">Visualizar CRUD</h2>
+                <p class="card-text">Tema: IA en la Educación</p>
+                <a href="{{ url_for('listar_categorias') }}" class="btn btn-light">Gestionar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Información técnica -->
+<div class="card">
+    <div class="card-header">
+        <h5>¿Qué hay en el sistema?</h5>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <h6>Integrantes:</h6>
+                <ul>
+                    <li>Steban Cadena</li>
+                    <li>Sebastian Campo</li>
+                    <li>Samuel Villalobos</li>
+                </ul>
+                <h6>Características:</h6>
+                <ul>
+                    <li>Procedimiento de búsqueda de artículos en bases de datos</li>
+                    <li>Descripción completa de los artículos seleccionados</li>
+                    <li>CRUD funcional con temática relacionada con un artículo: IA en la educación</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h6>Tecnologías y dependencias:</h6>
+                <div class="d-flex gap-2 flex-wrap">
+                    <span class="badge bg-primary">Python</span>
+                    <span class="badge bg-secondary">Flask</span>
+                    <span class="badge bg-success">SQLite</span>
+                    <span class="badge bg-danger">HTML5 / CSS3</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

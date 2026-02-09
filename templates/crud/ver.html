@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}{{ articulo.titulo[:40] }}... - Sistema NTD{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Detalles del Artículo</h2>
+
+<div class="card">
+    <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">{{ articulo.titulo }}</h4>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <p><strong>👥 Autores:</strong> {{ articulo.autores }}</p>
+                <p><strong>📅 Año de publicación:</strong> {{ articulo.año }}</p>
+                <p><strong>🏛️ Revista/Fuente:</strong> {{ articulo.revista }}</p>
+            </div>
+            <div class="col-md-6">
+                <p><strong>🔍 Búsqueda realizada por:</strong> {{ articulo.busqueda.nombre }}</p>
+                <p><strong>📊 Base de datos:</strong> {{ articulo.busqueda.base_datos }}</p>
+                <p><strong>🔑 Palabras clave:</strong></p>
+                <p>
+                    {% for palabra in articulo.palabras_clave.split(',') %}
+                    <span class="badge bg-info me-1">{{ palabra.strip() }}</span>
+                    {% endfor %}
+                </p>
+            </div>
+        </div>
+        
+        <hr>
+        
+        <h5>📝 Resumen:</h5>
+        <p class="text-justify">{{ articulo.resumen }}</p>
+        
+        <hr>
+        
+        <h5>📚 Referencia APA:</h5>
+        <div class="bg-light p-3 rounded">
+            <em>{{ articulo.referencia_apa }}</em>
+        </div>
+    </div>
+    <div class="card-footer">
+        <a href="{{ url_for('mostrar_articulos') }}" class="btn btn-secondary">
+            <i class="bi bi-arrow-left"></i> Volver a Artículos
+        </a>
+    </div>
+</div>
+{% endblock %}
