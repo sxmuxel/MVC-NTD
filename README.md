@@ -25,7 +25,6 @@ un CRUD de categorías relacionadas con aplicaciones de **Inteligencia Artificia
 En la terminal:
 ```bash
 git clone https://github.com/sxmuxel/MVC-NTD.git
-cd MVC-NTD
 ```
 
 ### Paso 2: Crear entorno virtual
