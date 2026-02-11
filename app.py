@@ -148,7 +148,7 @@ def crear_datos_ejemplo():
         busqueda1 = Busqueda(
             nombre="Steban Cadena",
             base_datos="Scopus",
-            cadena_busqueda="“Artificial Intelligence” AND “Systems Engineering”",
+            cadena_busqueda = 'TITLE-ABS-KEY ( "artificial intelligence" ) AND TITLE-ABS-KEY ( "systems engineering" ) ) AND ( LIMIT-TO ( OA , "all" )',
             cantidad_resultados=10410
         )
         db.session.add(busqueda1)
@@ -156,7 +156,7 @@ def crear_datos_ejemplo():
         busqueda2 = Busqueda(
             nombre="Samuel Villalobos",
             base_datos="Scopus",
-            cadena_busqueda = "( TITLE-ABS-KEY ( \"artificial intelligence\" OR \"AI\" OR \"machine learning\" OR \"deep learning\" ) ) AND ( TITLE-ABS-KEY ( \"systems engineering\" OR \"software engineering\" OR \"computer systems\" ) )",
+            cadena_busqueda = 'TITLE-ABS-KEY ( "artificial intelligence" OR "AI" OR "machine learning" OR "deep learning" ) AND TITLE-ABS-KEY ( "systems engineering" OR "software engineering" OR "computer systems" )',
             cantidad_resultados=19211
         )
         db.session.add(busqueda2)
@@ -164,7 +164,7 @@ def crear_datos_ejemplo():
         busqueda3 = Busqueda(
             nombre="Sebastian Campo",
             base_datos="Scopus",
-            cadena_busqueda="TITLE-ABS-KEY ( decision-making  AND systems  OR  intelligent  AND information  AND systems ) ",
+            cadena_busqueda = 'TITLE-ABS-KEY ( "decision-making" AND "systems" OR "intelligent" AND "information" AND "systems" )',
             cantidad_resultados=147930
         )
         db.session.add(busqueda3)        
@@ -185,6 +185,30 @@ def crear_datos_ejemplo():
         db.session.add(articulo1)
 
         articulo2 = Articulo(
+            titulo="Research on the refinement of college student education management based on artificial intelligence.",
+            autores="Lai, Qiujia.",
+            año=2026,
+            revista="Discover Artificial Intelligence, 6, Article 31",
+            resumen="In the era of digital transformation, traditional college student education (CSE) management faces several challenges, including inefficiency, a lack of personalization, and delayed decision-making. To address these limitations, this research aims to integrate artificial intelligence (AI) into education management systems, aiming to refine and enhance both administrative and academic processes in higher education institutions. AI technologies provide significant potential to improve various facets of student management, such as academic performance monitoring, behavioral analysis, early risk detection, and personalized learning support. The dataset used in the research comprises academic records, including course grades, attendance logs, and enrollment histories. Additionally, behavioral and engagement metrics were collected from institutional learning management systems. To prepare the data for model training, feature normalization was performed using the Min-Max scaling technique, and principal component analysis (PCA) was employed for feature extraction. This research proposes a novel deep learning-based Artificial Gorilla Troops Optimizer-driven Residual Recurrent Neural Network (AGTO-ResRNN) model to automate student profiling and intervention planning. The model enables proactive academic advising and timely delivery of personalized support services by adjusting educational strategies based on predictive insights. The experimental implementation of the AGTO-ResRNN model demonstrated significant improvements in education management accuracy, operational efficiency, and student satisfaction. Key performance indicators, such as MAE (0.116), accuracy (98.50%), recall (95.42%), RMSE (0.183), F1-score (96.00%), and precision (96.54%), showed substantial enhancement compared to traditional methods. The research suggests that AI-driven management systems can enhance the educational environment, providing valuable insights to modernize student support.",
+            palabras_clave="artificial intelligence, education management systems, higher education, student performance analytics, deep learning, intelligent decision support systems",
+            referencia_apa="Lai, Qiujia. Research on the refinement of college student education management based on artificial intelligence. Discover Artificial Intelligence, 2026. DOI: https://doi.org/10.1007/s44163-025-00651-9",
+            busqueda_id=1
+        )
+        db.session.add(articulo2)  
+
+        articulo3 = Articulo(
+            titulo="Robotics and artificial intelligence applications in neurorehabilitation: a bibliometric analysis (2003–2025).",
+            autores="Taskaya, B., & Taskaya, C.",
+            año=2026,
+            revista="Journal of NeuroEngineering and Rehabilitation, 23, Article 55",
+            resumen="Robotic and artificial intelligence (AI)-assisted neurorehabilitation has emerged as a rapidly growing interdisciplinary field, integrating engineering innovations with clinical practice to enhance motor and cognitive recovery in neurological disorders. While research in this domain has expanded substantially over the last two decades, only a few bibliometric studies have examined related topics (e.g., new technologies in neurorehabilitation, rehabilitation robotics after stroke, AI in stroke care), and, to our knowledge, no study has provided a comprehensive bibliometric mapping specifically focused on robotics and artificial intelligence applications in neurorehabilitation. This study aimed to analyse the global trends, influential contributors, thematic evolution, and collaborative networks in robotic and AI-assisted neurorehabilitation.",
+            palabras_clave="robotics, artificial intelligence, neurorehabilitation, rehabilitation engineering, bibliometric analysis, intelligent healthcare systems",
+            referencia_apa="Taskaya, B., & Taskaya, C. (2026). Robotics and artificial intelligence applications in neurorehabilitation: a bibliometric analysis (2003–2025). Journal of NeuroEngineering and Rehabilitation, 2026. https://doi.org/10.1186/s12984-025-01870-y",
+            busqueda_id=1
+        )
+        db.session.add(articulo3)              
+
+        articulo4 = Articulo(
             titulo="Modality augmentation and task-aware dual-modal LoRAs for multi-task multimodal federated learning.",
             autores="Zeng, Y., Ren, H., Cai, Y., Li, Y., & Jing, Q.",
             año=2026,
@@ -194,9 +218,33 @@ def crear_datos_ejemplo():
             referencia_apa="Zeng, Y., Ren, H., Cai, Y., Li, Y., & Jing, Q. (2026). Modality augmentation and task-aware dual-modal LoRAs for multi-task multimodal federated learning. Information Processing & Management, 63, Article 104601. https://doi.org/10.1016/j.ipm.2025.104601",            
             busqueda_id=2
         )
-        db.session.add(articulo2)    
+        db.session.add(articulo4)   
 
-        articulo3 = Articulo(
+        articulo5 = Articulo(
+            titulo="Large language models for high-level computer-aided process planning in a distributed manufacturing paradigm. Robotics and Computer-Integrated.",
+            autores="Stathatos, E., Benardos, P., Vosniakos, G.-C., Gross, D., & Spieker, H.",
+            año=2026,
+            revista="Robotics and Computer-Integrated Manufacturing, 100, Article 103233",
+            resumen="This study applies Large Language Models (LLMs) to high-level Computer-Aided Process Planning (CAPP) in a distributed manufacturing context. It aims to generate alternative, feasible process chains for production of a wide range of parts. Parts are encoded in a custom encoding scheme supporting diverse part overall shapes, geometrical features within them, and corresponding manufacturing processes. The CAPP problem is formulated as a sequence prediction task, where a GPT-2-based LLM generates process chains autoregressively. To train and test the LLM a synthetic dataset of 7,840 unique parts and their alternative process chains was generated using expert-driven rule-based logic. The LLM is trained from scratch using a tokenization scheme treating part features and processes uniformly as discrete tokens, special tokens being employed to control sequence flow. Performance evaluation was performed for systematically reducing the size of the dataset. Finally, even with as little as 5% of the training data, the LLM achieves over 99% accuracy at the process chain-level. The extremely few spotted errors mainly involve minor secondary process mispredictions without critical failures. For comparison, a Recurrent Neural Network (RNN) was also trained with the same dataset. Since manufacturing data stemming from experts and not from sensors is notoriously difficult to collect, training a machine learning model with a dataset that is as small as possible is of utmost importance. In this light, the LLM proved superior to RNN, in fact emphatically so, the more the training dataset was limited.",
+            palabras_clave="large language models, computer-aided process planning, distributed manufacturing, intelligent manufacturing systems, systems engineering, machine learning",
+            referencia_apa="Stathatos, E., Benardos, P., Vosniakos, G.-C., Gross, D., & Spieker, H. (2026). Large language models for high-level computer-aided process planning in a distributed manufacturing paradigm. Robotics and Computer-Integrated Manufacturing, 83. https://doi.org/10.1016/j.rcim.2026.103233",            
+            busqueda_id=2
+        )
+        db.session.add(articulo5)  
+
+        articulo6 = Articulo(
+            titulo="Optimizing distributed inference in healthcare IoT: Reinforcement learning and explainable AI for dynamic neural network pruning.",
+            autores="Gaddam, V. G., Kalaivani, K., Ramakrishna, K. V. S. S., Singaraju, S., & Motupalli, R.",
+            año=2026,
+            revista="Expert Systems with Applications, 306, Article 131069",
+            resumen="The rapid adoption of the Internet of Things (IoT) in healthcare has led to the proliferation of connected devices generating massive amounts of data, which require efficient processing and analysis. To address the challenge of performing distributed inference on these devices while managing limited computational resources, this paper proposes a novel framework that integrates reinforcement learning (RL) with dynamic pruning strategies, guided by explainable AI (XAI) techniques. The proposed RL-based dynamic pruning for distributed inference via XAI (RL-DPDX) ensures optimal resource utilization by selectively pruning model layers during inference without compromising model accuracy. Explainable AI is leveraged to enhance transparency and understanding of the pruning decisions, particularly in data-constrained environments. The paper presents a detailed system model, problem formulation, and a sub-optimal solution, followed by the development of the RL-DPDX framework, including environment design, state-action spaces, reward function, and agent architecture. Through extensive simulations, the framework’s performance is evaluated in a healthcare scenario, demonstrating significant improvements in computational efficiency, scalability, and adaptability compared to existing methods.",
+            palabras_clave="reinforcement learning, distributed inference, healthcare iot, explainable ai, dynamic neural network pruning, systems engineering",
+            referencia_apa="Gaddam, V. G., Kalaivani, K., Ramakrishna, K. V. S. S., Singaraju, S., & Motupalli, R. (2026). Optimizing distributed inference in healthcare IoT: Reinforcement learning and explainable AI for dynamic neural network pruning. Expert Systems with Applications, 239. https://doi.org/10.1016/j.eswa.2025.131069",            
+            busqueda_id=2
+        )
+        db.session.add(articulo6)          
+
+        articulo7 = Articulo(
             titulo="Intelligent parameter recommendation for substation design using knowledge graph and graph neural networks ",
             autores="Zhou, Liang., Gao, Zhen-Ting., Zhai, Pen-Fan., Zeng, Yi-Heng.",
             año=2026,
@@ -206,7 +254,31 @@ def crear_datos_ejemplo():
             referencia_apa="Zhou, Liang., Gao, Zhen-Ting., Zhai, Pen-Fan., Zeng, Yi-Heng. (2026). Intelligent parameter recommendation for substation design using knowledge graph and graph neural networks. Energy Informatics. https://doi.org/10.1186/s42162-025-00605-6",
             busqueda_id=3
         )
-        db.session.add(articulo3)            
+        db.session.add(articulo7)        
+
+        articulo8 = Articulo(
+            titulo="Emerging trends of recommender system for e-commerce: a comprehensive review.",
+            autores="Rajpoot, C., Tiwari, V., Vishwakarma, S.",
+            año=2026,
+            revista="Discover Computing, 29, Article 63",
+            resumen="With the rapid growth of online information, the recommender system (RSs) has become essential tools for filtering information and generating personalized recommendations for customers. These systems analyze individual user preferences, past reviews, and product ratings to enhance decision-making in the e-commerce sector. In this comprehensive review, several research articles published between 2020 and 2025 have been reviewed from various journals and conferences, covering multiple dimensions of recommender systems. The study emphasizes emerging techniques aimed at improving system performance. It begins by providing background information on recommender systems, including existing literature and prevailing research challenges. Furthermore, it explores cutting-edge methodologies such as machine learning, deep learning, large language models, and conversational recommender systems that are contributing to the evolution of RSs. Beyond traditional approaches, this review addresses significant research gaps and identifies key aspects influencing RS platforms. The ultimate goal of this study is to present a comprehensive understanding of the current state and future direction of recommender systems in the e-commerce industry.",
+            palabras_clave="recommender systems, e-commerce, personalized recommendations, machine learning, deep learning, intelligent decision support systems",
+            referencia_apa="Rajpoot, C., Tiwari, V., Vishwakarma, S. (2026) Emerging trends of recommender system for e-commerce: a comprehensive review. https://doi.org/10.1007/s10791-026-09923-z",
+            busqueda_id=3
+        )
+        db.session.add(articulo8) 
+
+        articulo9 = Articulo(
+            titulo="From physics to machine learning and back: Part I - Learning with inductive biases in prognostics and health management (PHM).",
+            autores="Fink, O., Sharma, V., Nejjar, I., Von Krannichfeldt, L., Garmaev, S., Zhang, Z., Wei, A.",
+            año=2026,
+            revista="Reliability Engineering & System Safety, 271, Article 112213",
+            resumen="Prognostics and Health Management (PHM) is essential for ensuring the safe, reliable, and efficient operation of complex engineered systems by integrating fault detection, diagnostics, and prognostics into a unified framework. While machine learning (ML) has significantly advanced PHM by enabling data-driven decision-making, real-world challenges such as sparse or noisy data, limited labels, and complex degradation dynamics require approaches that go beyond purely data-driven modeling. This review focuses on inductive bias – the integration of prior knowledge, physical laws, and structural assumptions into ML model design – as a foundational mechanism to improve generalization, robustness, and interpretability in PHM. We explore the current state of the art in applying inductive bias to PHM, reviewing a wide range of methods including graph neural networks (relational biases), state-space models and neural ordinary differential equations (temporal biases), signal processing-inspired learning (spectral biases), neural operators (operator biases), causal representation learning (causal biases), and interpretable-by-design models (interpretability biases) through the use of inductive bias. For each method, we discuss its advantages, limitations, and suitability for different PHM tasks, and identify emerging applications where these techniques show strong potential. Furthermore, we examine how ML contributes back to physics understanding through symbolic regression (rediscovering physical laws) and post-hoc interpretation (transparent decision-making), closing the loop between physics understanding and modeling in PHM. By embedding domain knowledge into learning architectures, these approaches help constrain the hypothesis space and promote physically consistent learning, bridging the gap between theoretical modeling and real-world deployment in safety-critical applications. Part II of this review explores observational and learning biases, focusing on how data augmentation, representation, and training strategies shape model behavior and further enhance alignment between machine learning and the physical systems it aims to monitor and manage.",
+            palabras_clave="prognostics and health management, inductive bias, physics-informed machine learning, system reliability engineering, interpretable machine learning, intelligent maintenance systems",
+            referencia_apa="Fink, O., Sharma, V., Nejjar, I., Von Krannichfeldt, L., Garmaev, S., Zhang, Z., Wei, A., & Bizzi, A. (2026). From physics to machine learning and back: Part I – Learning with inductive biases in prognostics and health management (PHM). Reliability Engineering & System Safety, 271, Article 112213. https://doi.org/10.1016/j.ress.2026.112213",
+            busqueda_id=3
+        )
+        db.session.add(articulo9)                     
         
         # Crear CRUDs de ejemplo
         cat1 = Categoria(nombre="ChatGPT en las Escuelas", tipo_enfoque= "Augmentation", descripcion="Asiste a estudiantes y docentes en la redacción de textos, resolución de dudas y apoyo al aprendizaje")
